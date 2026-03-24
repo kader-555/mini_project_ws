@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- Properties -->
+    <xacro:property name="base_width" value="0.6" />
+    <xacro:property name="base_length" value="0.4" />
+    <xacro:property name="base_height" value="0.3" />
+
+    <xacro:property name="wheel_radius" value="0.1" />
+    <xacro:property name="wheel_length" value="0.05" />
+
+    <xacro:property name="screen_width" value="0.01" />
+    <xacro:property name="screen_length" value="0.3" />
+    <xacro:property name="screen_height" value="0.1" />
+
+    <xacro:property name="caster_radius" value="0.05" />
+    
+    <xacro:property name="scanner_radius" value="0.1" />
+    <xacro:property name="scanner_length" value="0.03" />
+    
+
+
+<!-- Materials -->
+    <material name="black">
+        <color rgba="0.125 0.129 0.141 1"/>
+    </material>
+
+    <material name="grey">
+        <color rgba="0.972 0.972 0.972 0.5"/>
+    </material>
+
+    <material name="red">
+        <color rgba="0.850 0.050 0.050 1.0"/>
+    </material>
+
+    <material name="white">
+        <color rgba="0.972 0.972 0.972 1.0"/>
+    </material>
+
+<!-- Inertial Properties & Macros -->
+    <xacro:property name="base_mass" value="5.0" />
+    <!-- box inertia -->
+    <xacro:macro name="box_inertia" params="m x y z o_xyz o_rpy">
+        <inertial>
+            <mass value="${m}"/>
+            <origin xyz="${o_xyz}" rpy="${o_rpy}"/>
+            <inertia ixx="${(m/12)*(y*y + z*z)}" ixy="0.0" ixz="0.0"
+                    iyy="${(m/12)*(x*x + z*z)}" iyz="0.0"
+                    izz="${(m/12)*(y*y + x*x)}"/>
+        </inertial>
+    </xacro:macro>
+
+    <!-- cylinder inertia -->
+    <xacro:macro name="cylinder_inertia" params="m r l o_xyz o_rpy">
+        <inertial>
+            <mass value="${m}"/>
+            <origin xyz="${o_xyz}" rpy="${o_rpy}"/>
+            <inertia ixx="${(m/12)*(3.0*(r*r) + l*l)}" ixy="0.0" ixz="0.0"
+                    iyy="${(m/12)*(3.0*(r*r) + l*l)}" iyz="0.0"
+                    izz="${(m/2)*(r*r)}"/>
+        </inertial>
+    </xacro:macro>
+
+     <!-- sphere inertia -->
+    <xacro:macro name="sphere_inertia" params="m r o_xyz o_rpy">
+        <inertial>
+            <mass value="${m}"/>
+            <origin xyz="${o_xyz}" rpy="${o_rpy}"/>
+            <inertia ixx="${(2*m/5)*(r*r)}" ixy="0.0" ixz="0.0"
+                     iyy="${(2*m/5)*(r*r)}" iyz="0.0"
+                     izz="${(2*m/5)*(r*r)}"/>
+        </inertial>
+    </xacro:macro>
+</robot>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>mini_project_bringup</name>
+  <version>0.0.0</version>
+  <description>Bringup package for mini project robot simulation</description>
+  <maintainer email="your.email@example.com">Your Name</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>robot_state_publisher</depend>
+  <depend>ros_gz_sim</depend>
+  <depend>ros_gz_bridge</depend>
+  <depend>rviz2</depend>
+  <depend>mini_project_description</depend>
+  <depend>xacro</depend>
+  <depend>nav2_bringup</depend>
+  <depend>slam_toolbox</depend>
+  
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
