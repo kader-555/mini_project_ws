@@ -45,7 +45,6 @@
     <arg name="params_file" value="$(var nav2_params)"/>
     <arg name="map" value="$(var map)"/>
     <arg name="use_sim_time" value="true"/>
-    <arg name="use_collision_monitor" value="False"/>
 </include>
     <node pkg="ros_gz_bridge" exec="parameter_bridge" output="screen">
         <param name="config_file" value="$(find-pkg-share mini_project_bringup)/config/gazebo_bridge.yaml"/>
