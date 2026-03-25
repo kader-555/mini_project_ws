@@ -12,12 +12,19 @@
     <plugin name='ignition::gazebo::systems::Sensors' filename='ignition-gazebo-sensors-system'>
       <render_engine>ogre2</render_engine>
     </plugin>
-    <scene>
+     <scene>
       <ambient>1 1 1 1</ambient>
       <background>0.3 0.7 0.9 1</background>
       <shadows>0</shadows>
       <grid>1</grid>
-    </scene>
+    </scene> 
+    <!-- <light name="sun" type="directional">
+    <cast_shadows>false</cast_shadows>
+    <pose>0 0 10 0 0 0</pose>
+    <diffuse>1 1 1 1</diffuse>
+    <specular>0.5 0.5 0.5 1</specular>
+    <direction>-0.5 0.5 -1</direction>
+  </light> -->
 
     <model name='ground_plane'>
       <static>1</static>
@@ -394,12 +401,12 @@
       </link>
     </model>
 
-    <include>
+    <!-- <include>
       <uri>
         https://fuel.ignitionrobotics.org/1.0/MovAi/models/Tugbot
       </uri>
       <name>tugbot</name>
       <pose>2.75268 1.0014 0.132279 0 0 0</pose>
-    </include>
+    </include> -->
   </world>
 </sdf>
