@@ -36,7 +36,7 @@
 
 # JOINT STATES
 - ros_topic_name: "/joint_states"
-  gz_topic_name: "/world/warehouse_world/model/robot/joint_state"
+  gz_topic_name: "/world/hospital_world/model/robot/joint_state"
   ros_type_name: "sensor_msgs/msg/JointState"
   gz_type_name: "gz.msgs.Model"
   direction: GZ_TO_ROS
