@@ -1,6 +1,6 @@
 <launch>
     <!-- Robot State Publisher Node  -->
-    <let  name="robot_path" value="$(find-pkg-share mini_project_description)/urdf/robot.urdf.xacro"/>
+    <let  name="robot_path" value="$(find-pkg-share nursebot_description)/urdf/robot.urdf.xacro"/>
     <node pkg="robot_state_publisher"  exec="robot_state_publisher">
         <param  name="robot_description" value="$(command 'xacro $(var robot_path)')"/>
     </node>
